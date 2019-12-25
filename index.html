@@ -7,7 +7,7 @@
 <h1>Burning Wheel test difficulty solver</h1>
 <p>Enter information and click solve</p>
   
-<h1 id="difficulty">
+<h3 id="difficulty">
 # dice rolled: <input type="text" id="dice"><br />
 obstacle: <input type="text" name="ob"><br />
 <br>
@@ -23,26 +23,29 @@ var diff = parseFloat(field1) - parseFloat(field2)
 
 
 if (diff < 0) {
-	document.getElementByID("difficulty").innerHTML = "challenging"
+	var result = "challenging"
 
 }
 if (diff === 0){
-	document.getElementByID("difficulty").innerHTML = "difficult"
+	var result = "difficult"
 }
 if (diff >= 3){
-	document.getElementByID("difficulty").innerHTML = "routine"
+	var result = "routine"
 }
 if (diff === 1){
 	if(dice < 4){
-		document.getElementByID("difficulty").innerHTML = "routine"
-	}else{document.getElementByID("difficulty").innerHTML = "difficult"}
+		var result = "routine"
+	}else{var result = "difficult"}
 }
 if (diff === 2){
 	if(dice <= 6){
-		document.getElementByID("difficulty").innerHTML = "routine"
-	}else{document.getElementByID("difficulty").innerHTML = "difficult"}
+		var result = "routine"
+	}else{var result = "difficult"}
 }
-
+if (!isNaN(result))
+{
+	document.getElementByID("difficulty").innerHTML=result
+}
 }
 
 
@@ -50,3 +53,4 @@ if (diff === 2){
 
 </body>
 </html>
+
