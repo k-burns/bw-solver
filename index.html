@@ -1,49 +1,52 @@
 <html>
 <head>
   
-<script language="JavaScript">
-<!--
-function testSolver(){
-document.solver.diff = document.solver.dice.value - document.solver.ob.value
-if (diff < 0) {
-	document.solver.test.value = "challenging"
-
-}
-if (diff === 0){
-	document.solver.test.value = "difficult"
-}
-if (diff >= 3){
-	document.solver.test.value = "routine"
-}
-if (diff === 1){
-	if(dice < 4){
-		document.solver.test.value = "routine"
-	}else{document.solver.test.value = "difficult"}
-}
-if (diff === 2){
-	if(dice <= 6){
-		document.solver.test.value = "routine"
-	}else{document.solver.test.value = "difficult"}
-}
-
-}
-
-//-->
-</script>
-  
 </head>
 <body>
 
 <h1>Burning Wheel test difficulty solver</h1>
 <p>Enter information and click solve</p>
   
-<form name="solver">
-# dice rolled: <input type="text" name="dice"><br />
+<h1 id="difficulty">
+# dice rolled: <input type="text" id="dice"><br />
 obstacle: <input type="text" name="ob"><br />
-test difficulty: <input type="text" name="test"><br />
-<input type="button" value="Find difficulty" onClick="testSolver()"/>
-</form>
+<br>
+<button onclick = "testSolver()">Solve</button>
+
+
+<script language="JavaScript">
+<!--
+function testSolver(){
+var d_field = document.getElementByID("dice").value;
+var o_field = document.getElementByID("ob").value;
+var diff = parseFloat(field1) - parseFloat(field2)
+
+
+if (diff < 0) {
+	document.getElementByID("difficulty").innerHTML = "challenging"
+
+}
+if (diff === 0){
+	document.getElementByID("difficulty").innerHTML = "difficult"
+}
+if (diff >= 3){
+	document.getElementByID("difficulty").innerHTML = "routine"
+}
+if (diff === 1){
+	if(dice < 4){
+		document.getElementByID("difficulty").innerHTML = "routine"
+	}else{document.getElementByID("difficulty").innerHTML = "difficult"}
+}
+if (diff === 2){
+	if(dice <= 6){
+		document.getElementByID("difficulty").innerHTML = "routine"
+	}else{document.getElementByID("difficulty").innerHTML = "difficult"}
+}
+
+}
+
+
+</script>
 
 </body>
 </html>
-
