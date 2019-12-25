@@ -7,7 +7,7 @@
 <h1>Burning Wheel test difficulty solver</h1>
 <p>Enter information and click solve</p>
   
-<h3 id="difficulty">
+<h2 id="difficulty">
 # dice rolled: <input type="text" id="dice">
 <br>
 obstacle: <input type="text" id="ob">
@@ -18,36 +18,39 @@ obstacle: <input type="text" id="ob">
 
 <script language="JavaScript">
 <!--
-function testSolver(){
-var d_field = document.getElementByID("dice").value;
-var o_field = document.getElementByID("ob").value;
-var diff = parseFloat(d_field) - parseFloat(o_field)
-
-
-if (diff < 0) {
-	var result = "challenging"
-
-}
-if (diff === 0){
-	var result = "difficult"
-}
-if (diff >= 3){
-	var result = "routine"
-}
-if (diff === 1){
-	if(dice < 4){
-		var result = "routine"
-	}else{var result = "difficult"}
-}
-if (diff === 2){
-	if(dice <= 6){
-		var result = "routine"
-	}else{var result = "difficult"}
-}
-if (!isNaN(result))
+function testSolver()
 {
-	document.getElementByID("difficulty").innerHTML=result
-}
+	var dfield = document.getElementByID("dice").value;
+	var ofield = document.getElementByID("ob").value;
+	var diff = parseFloat(dfield) - parseFloat(ofield);
+
+	if (diff < 0) {
+		var result = "challenging";
+	}
+	if (diff === 0) {
+		var result = "difficult";
+	}
+	if (diff >= 3) {
+		var result = "routine";
+	}
+	if (diff === 1) {
+		if(dice < 4) {
+			var result = "routine";
+		}
+		else {
+			var result = "difficult";
+		}
+	}
+	if (diff === 2) {
+		if(dice <= 6) {
+			var result = "routine"
+		}
+		else {var result = "difficult"}
+	}
+	if (!isNaN(result))
+	{
+		document.getElementByID("difficulty").innerHTML=result;
+	}
 }
 
 
