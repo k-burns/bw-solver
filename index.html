@@ -7,9 +7,10 @@
 <h1>Burning Wheel test difficulty solver</h1>
 <p>Enter information and click solve</p>
   
-<h3 id="difficulty">
-# dice rolled: <input type="text" id="dice"><br />
-obstacle: <input type="text" name="ob"><br />
+<h3 id="difficulty"></h3>
+# dice rolled: <input type="text" id="dice">
+<br>
+obstacle: <input type="text" name="ob">
 <br>
 <button onclick = "testSolver()">Solve</button>
 
@@ -19,7 +20,7 @@ obstacle: <input type="text" name="ob"><br />
 function testSolver(){
 var d_field = document.getElementByID("dice").value;
 var o_field = document.getElementByID("ob").value;
-var diff = parseFloat(field1) - parseFloat(field2)
+var diff = parseFloat(d_field) - parseFloat(o_field)
 
 
 if (diff < 0) {
