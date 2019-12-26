@@ -7,12 +7,12 @@
 <h1>Burning Wheel test difficulty solver</h1>
 <p>Enter information and click solve</p>
   
-<h3 id="difficulty">
+<h2 id="difficulty">
 # dice rolled: <input type="text" id="dice">
 <br>
 obstacle: <input type="text" id="ob">
 <br>
-</h3>
+</h2>
 <button onclick = "testSolver()">Solve</button>
 
 
@@ -20,8 +20,8 @@ obstacle: <input type="text" id="ob">
 <!--
 function testSolver()
 {
-	var dfield = document.getElementByID("dice").value;
-	var ofield = document.getElementByID("ob").value;
+	var dfield = document.getElementById("dice").value;
+	var ofield = document.getElementById("ob").value;
 	var diff = parseFloat(dfield) - parseFloat(ofield);
 
 	if (diff < 0) {
@@ -47,9 +47,10 @@ function testSolver()
 		}
 		else {var result = "difficult"}
 	}
+	
 	if (!isNaN(diff))
 	{
-		document.getElementByID("difficulty").innerHTML="The difference is"+diff;
+		document.getElementById("difficulty").innerHTML="The difference is"+diff;
 	}
 }
 
