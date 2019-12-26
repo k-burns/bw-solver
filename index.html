@@ -1,61 +1,32 @@
 <html>
-<head>
-  
-</head>
 <body>
 
-<h1>Burning Wheel test difficulty solver</h1>
-<p>Enter information and click solve</p>
-  
-<h2 id="difficulty">
-# dice rolled: <input type="text" id="dice">
-<br>
-obstacle: <input type="text" id="ob">
-<br>
-</h3>
-<button onclick = "testSolver()">Solve</button>
+<h1>Calculate Two Fields</h1>
+<h1 id="answer"></h1>
 
+Num 1<input type="text" id="num1">
+<br>
+<br>
+Num 2<input type="text" id="num2">
+<br>
+<br>
+<button onclick="calculate()">Calculate</button>
 
-<script language="JavaScript">
-<!--
-function testSolver()
+<script>
+
+function calculate()
 {
-	var dfield = document.getElementByID("dice").value;
-	var ofield = document.getElementByID("ob").value;
-	var diff = parseFloat(dfield) - parseFloat(ofield);
+	var field1=document.getElementById("num1").value;
+	var field2=document.getElementById("num2").value;
 
-	if (diff < 0) {
-		var result = "challenging";
-	}
-	if (diff === 0) {
-		var result = "difficult";
-	}
-	if (diff >= 3) {
-		var result = "routine";
-	}
-	if (diff === 1) {
-		if(dice < 4) {
-			var result = "routine";
-		}
-		else {
-			var result = "difficult";
-		}
-	}
-	if (diff === 2) {
-		if(dice <= 6) {
-			var result = "routine"
-		}
-		else {var result = "difficult"}
-	}
-	if (!isNaN(result))
+	var result=parseFloat(field1)+parseFloat(field2);
+
+	if(!isNaN(result))
 	{
-		document.getElementByID("difficulty").innerHTML=result;
+		document.getElementById("answer").innerHTML="The answer is "+result;
 	}
 }
 
-
-</script>
+</script>result
 
 </body>
-</html>
-
